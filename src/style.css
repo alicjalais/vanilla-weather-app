@@ -23,7 +23,8 @@ input {
 }
 .btn-outline-success:hover {
   background-color: #d47ae8;
+  transition: ease-in-out 200ms;
 }
 .navbar-light {
-  background-color: transparent;
+  background-color: #fce3d9;
 }
