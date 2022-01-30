@@ -13,3 +13,11 @@ h1 {
   padding: 80px;
   color: #bd245f;
 }
+input {
+  border: solid;
+  border-color: #e44985;
+}
+.btn-outline-success {
+  background-color: #db6b97;
+  color: white;
+}
