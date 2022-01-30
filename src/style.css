@@ -31,3 +31,6 @@ input {
 .bg-light {
   background-color: #fce3d9;
 }
+.container-fluid {
+  background: transparent;
+}
