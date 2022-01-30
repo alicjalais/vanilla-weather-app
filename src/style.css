@@ -26,10 +26,10 @@ input {
   transition: ease-in-out 200ms;
 }
 .navbar-light {
-  background-color: #fce3d9;
+  background-color: #fce3d9 !important;
 }
 .bg-light {
-  background-color: #fce3d9;
+  background-color: #fce3d9 !important;
 }
 .container-fluid {
   background: transparent !important;
