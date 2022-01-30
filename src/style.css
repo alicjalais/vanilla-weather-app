@@ -1,6 +1,7 @@
 body {
-  background-image: url("../images/background_sakura.jpg");
+  background-image: url("../images/sakura3.jpg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
+  background-attachment: fixed;
 }
