@@ -21,3 +21,9 @@ input {
   background-color: #db6b97;
   color: white;
 }
+.btn-outline-success:hover {
+  background-color: #d47ae8;
+}
+.navbar-light {
+  background-color: transparent;
+}
