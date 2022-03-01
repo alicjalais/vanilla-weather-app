@@ -56,3 +56,8 @@ h2 {
   padding-right: 15px;
   padding-left: 15px;
 }
+.date-container {
+  font-family: Merriweather;
+  color: #ae427b;
+  font-size: 20px;
+}
