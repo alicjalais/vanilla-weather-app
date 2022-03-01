@@ -2,7 +2,7 @@ let searchInput = document.querySelector("#search-input");
 let cityForm = document.querySelector("#search-form");
 let mainCity = document.querySelector(".main-city");
 let temperatureElement = document.querySelector(".temp-container");
-let dateContainer = document.querySelector("date-container");
+let dateContainer = document.querySelector(".date-container");
 
 function showDate() {
   let days = [
@@ -28,4 +28,6 @@ function showDate() {
   dateContainer.innerHTML = newDate;
 }
 showDate();
-function showTemp() {}
+/*async function searchCity(city) {
+    let apiUrl = 
+}*/
