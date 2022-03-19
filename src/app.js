@@ -39,8 +39,8 @@ async function searchCity(city) {
   console.log(response);
 }
 function searchCity(event) {
-  event.preventDefault();
-
+  //event.preventDefault();
+  console.log(event);
   searchCity(searchInput.value);
 }
 cityForm.addEventListener("submit", searchCity);
