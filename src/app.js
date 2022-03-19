@@ -28,6 +28,19 @@ function showDate() {
   dateContainer.innerHTML = newDate;
 }
 showDate();
-/*async function searchCity(city) {
-    let apiUrl = 
-}*/
+
+let apiKey = "855c2de2be25508191312e2bfc361fa5";
+let city = "Budapest";
+
+async function searchCity(city) {
+  let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${apiKey}`;
+  let response = await axios.get(apiUrl);
+
+  console.log(response);
+}
+function searchCity(event) {
+  event.preventDefault();
+
+  searchCity(searchInput.value);
+}
+cityForm.addEventListener("submit", searchCity);
