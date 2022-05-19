@@ -4,6 +4,11 @@ body {
   background-size: cover;
   background-position: center;
   background-attachment: fixed;
+  max-width: 600px;
+  margin: 30px auto;
+  padding: 20px;
+  border: 1px solid #db6b97;
+  border-radius: 5px;
 }
 h1 {
   font-family: Merriweather;
