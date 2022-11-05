@@ -7,6 +7,8 @@ let searchButton = document.querySelector(".btn-outline-success");
 let descContainer = document.querySelector(".weather-desc");
 let weatherContainer = document.querySelector(".weather-forecast.row");
 let apiKey = "855c2de2be25508191312e2bfc361fa5";
+let city = "Budapest";
+let countryCode = "HU";
 
 document
   .querySelector(".switch input")
@@ -31,7 +33,7 @@ if (localStorage.getItem("temp") !== null) {
   localStorage.setItem("temp", "°C");
 }
 
-async function showDate() {
+async function showDate(callCity, callCountry) {
   let days = [
     "Sunday",
     "Monday",
@@ -53,14 +55,17 @@ async function showDate() {
   let newDate = `${day}, ${hour}:${minutes}`;
 
   dateContainer.innerHTML = newDate;
-  let apiLink = `https://api.openweathermap.org/data/2.5/forecast?lat=35&lon=139&appid=${apiKey}&units=${
+  let apiLink = `https://api.openweathermap.org/data/2.5/forecast?q=${callCity},${callCountry}&appid=${apiKey}&units=${
     localStorage.getItem("temp") === "°C" || !localStorage.getItem("temp")
       ? "metric"
       : "imperial"
   }`;
   let valasz = await axios.get(apiLink);
 
-  for (let index = 0; index < valasz.data.list.length; index += 8) {
+  let currentTime = Math.floor(hour / 3);
+  weatherContainer.innerHTML = "";
+  for (let index = currentTime; index < valasz.data.list.length; index += 8) {
+    console.log(index);
     let dayIndex = new Date(valasz.data.list[index].dt_txt).getDay();
     weatherContainer.insertAdjacentHTML(
       "beforeend",
@@ -84,9 +89,7 @@ async function showDate() {
   }
   console.log(valasz);
 }
-showDate();
-
-let city = "Budapest";
+showDate(city, countryCode);
 
 async function searchCity(city) {
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=${
@@ -95,7 +98,9 @@ async function searchCity(city) {
       : "imperial"
   }&appid=${apiKey}`;
   let response = await axios.get(apiUrl);
-
+  city = response.data.name;
+  countryCode = response.data.sys.country;
+  showDate(city);
   //console.dir(response.data);
   /*descContainer.innerHTML = response.data.weather[0].description;*/
   let icon = "";
